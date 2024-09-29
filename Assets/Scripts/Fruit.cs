@@ -6,10 +6,14 @@ public class Fruit : MonoBehaviour
     public ParticleSystem splashParticles;
     public Color splashColor;
     public bool isBomb;
-
-    void Start()
+    
+    void Update()
     {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(0, 12f);
+        if (transform.position.y < -7 && !isBomb)
+        {
+            GameManager.instance.Damage(1);
+            Destroy(gameObject);
+        }
     }
 
     public void Slice()
@@ -17,7 +21,11 @@ public class Fruit : MonoBehaviour
         Audio.Play(splashSound);
         if (isBomb)
         {
-            print(":(");
+           GameManager.instance.Damage(3);
+        }
+        else
+        {
+            GameManager.instance.AddScore(1);
         }
 
         foreach (Transform child in GetComponentsInChildren<Transform>())

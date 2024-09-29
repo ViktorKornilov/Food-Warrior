@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splashSound: {fileID: 8300000, guid: 461ba777b26000b4eb5c914f49ce9ad9, type: 3}
-  splashParticles: {fileID: 0}
+  splashParticles: {fileID: 5065897898058063847, guid: 97f8a5dbffc0b4f28ad510663e9ed32e, type: 3}
   splashColor: {r: 0, g: 0, b: 0, a: 0}
   isBomb: 1
 --- !u!58 &1962750925505966361

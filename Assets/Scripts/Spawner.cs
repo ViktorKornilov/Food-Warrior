@@ -45,7 +45,7 @@ public class Spawner : MonoBehaviour
 
                 GameObject obj = fruit.isBomb ? bomb : prefabs[Random.Range(0, prefabs.Length)];
                 Vector3 pos = transform.position + Vector3.right * fruit.x;
-                Instantiate(obj, pos, Quaternion.identity);//.GetComponent<Rigidbody2D>().velocity = fruit.velocity;
+                Instantiate(obj, pos, Quaternion.identity).GetComponent<Rigidbody2D>().velocity = fruit.velocity;
 
                 if(waves[currentWave].isSequence)await new WaitForSeconds(0.3f);
             }
