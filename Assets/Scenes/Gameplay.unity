@@ -177,16 +177,16 @@ MonoBehaviour:
       isBomb: 1
     isSequence: 0
   - fruits:
-    - x: 0
-      velocity: {x: -5, y: 10}
+    - x: 2
+      velocity: {x: 0, y: 10}
       isBomb: 0
     - x: 0
       velocity: {x: 0, y: 10}
       isBomb: 0
-    - x: 0
-      velocity: {x: 5, y: 10}
+    - x: -2
+      velocity: {x: 0, y: 10}
       isBomb: 0
-    isSequence: 1
+    isSequence: 0
   delay: 2
   currentWave: 0
 --- !u!1 &375433278
@@ -5526,6 +5526,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splashSound: {fileID: 8300000, guid: 734d20780e8c6ac4d90d8ec68355838a, type: 3}
+  sliceTime: 0
+  maxComboTime: 0.3
 --- !u!58 &737233063
 CircleCollider2D:
   m_ObjectHideFlags: 0

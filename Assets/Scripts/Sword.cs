@@ -4,6 +4,9 @@ public class Sword : MonoBehaviour
 {
     public AudioClip splashSound;
     Camera cam;
+    public float sliceTime;
+    public float maxComboTime;
+    public int combo;
 
     void Start()
     {
@@ -22,5 +25,16 @@ public class Sword : MonoBehaviour
     {
         Audio.Play(splashSound);
         other.gameObject.GetComponent<Fruit>().Slice();
+
+        if (Time.time - sliceTime < maxComboTime)
+        {
+            combo++;
+        }
+        else
+        {
+            print(combo);
+            combo = 1;
+        }
+        sliceTime = Time.time;
     }
 }
