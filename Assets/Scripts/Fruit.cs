@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Fruit : MonoBehaviour
 {
@@ -6,7 +7,8 @@ public class Fruit : MonoBehaviour
     public ParticleSystem splashParticles;
     public Color splashColor;
     public bool isBomb;
-    
+    public string nextSceneName;
+
     void Update()
     {
         if (transform.position.y < -7 && !isBomb)
@@ -42,5 +44,12 @@ public class Fruit : MonoBehaviour
 
         transform.DetachChildren();
         Destroy(gameObject);
+
+
+        // FRUIT AS A MENU BUTTON
+        if (nextSceneName != "")
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
     }
 }
